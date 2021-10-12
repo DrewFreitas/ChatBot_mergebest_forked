@@ -1,0 +1,28 @@
+import mccurdy
+import austin
+import gavin
+import drew
+
+from baseChat import CHAT_OBJECTS
+
+def chat(text):
+  if text.lower() == "help":
+    helpStrings = []
+    for obj in CHAT_OBJECTS:
+      helpStrings.extend(obj.help())
+
+    return "I know how to do the following:\n  * " + "\n  * ".join(helpStrings)
+
+  for obj in CHAT_OBJECTS:
+    response = obj.chat(text)
+
+    if response:
+      return response
+    
+  return "You have burnt out my processing unit. Please try again later."
+ 
+
+if __name__ == "__main__":
+  while(True):
+    userInput = input(">>> ")
+    print(chat(userInput))
