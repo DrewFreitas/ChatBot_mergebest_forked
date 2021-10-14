@@ -6,12 +6,13 @@ from baseChat import BaseChat, addChatObject
 class DrewChat(BaseChat):
   def chat(self, text):
     greetingOptions = ["hello", "hi", "hey", "yo", "hola", "namaste", "bonjour"]
-    leavingOptions = ["bye", "goodbye", "cya"]
+    leavingOptions = ["bye", "goodbye", "cya", "ciao", "cya later", "farewell", "cherrio"]
 
   
     text = text.replace(",", "")
     text = text.replace(".", "")
     text = text.replace("!", "")
+    text = text.replace("?", "")
     if text == "what's your name?":
       return "CoreBot"
 
@@ -49,7 +50,11 @@ class DrewChat(BaseChat):
     return None
 
   def help(self):
-      return["What is your favorite?"]
+      return["what is your least favorite?",
+      "who are you?", 
+      "how are you?",
+      "what's up?",
+      "bye",]
 
 
 chatObject = DrewChat()

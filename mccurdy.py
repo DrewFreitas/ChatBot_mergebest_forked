@@ -23,7 +23,6 @@ class McCurdyChat(BaseChat):
     text = text.replace(",", "")
     text = text.replace(".", "")
     text = text.replace("!", "")
-    text = text.replace("?", "")
   
     textLower = text.lower()
 
@@ -50,8 +49,8 @@ class McCurdyChat(BaseChat):
     return None
 
   def help(self):
-      return["What is your least favorite ",
-              "hello"]
+      return["hello",
+              "what is your favorite?"]
 
 
 chatObject = McCurdyChat()
